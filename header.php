@@ -33,7 +33,7 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<a id="logo" class="h1" href="<?php echo home_url(); ?>" rel="nofollow">Spartan <span>Theme</span></a>	
+					<a id="logo" class="h1" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>	
 					<span id="slogan"><?php bloginfo('description'); ?></span>
 					
 					<a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a>
