@@ -9,6 +9,7 @@ sites/*/private
 
 # Ignore default text files
 .htaccess
+.DS_Store
 robots.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
