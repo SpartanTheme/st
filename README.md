@@ -1,4 +1,4 @@
-drupal
-======
+Spartan Theme
+=============
 
-Drupal Snippets
+Starter Wordpress theme
