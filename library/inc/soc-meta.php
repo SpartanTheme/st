@@ -4,13 +4,15 @@
 		if ($spartan_og) 
 		echo $spartan_og; 	
 		else echo('http://spartantheme.com/wp-content/uploads/spartan-theme-social.png');
-	}
+	};
 
-	remove_filter ('the_excerpt',  'wpautop'); 
-		if (!empty($post->post_excerpt)) {
-  	$excerpt_raw = strip_tags(get_the_excerpt());	
-		}
-		while ( have_posts() ) : the_post('showposts=1');
+if (have_posts()) : while (have_posts()) : the_post();
+
+function spartan_soc_content() {
+	$content = get_the_content();
+      $content = strip_tags($content);
+      echo substr($content, 0, 140);
+}
 		
 ?>
 
@@ -32,3 +34,5 @@
 		<meta property="article:author" content="<?php the_author(); ?>">
 		
 <?php endwhile; ?>
+<?php wp_reset_postdata(); // reset the query ?>
+<?php endif; ?>
