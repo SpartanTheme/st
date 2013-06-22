@@ -8,7 +8,15 @@ sites/*/files
 sites/*/private
 
 # Ignore default text files
-.htaccess
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
 .DS_Store
 robots.txt
 /CHANGELOG.txt
