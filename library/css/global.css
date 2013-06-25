@@ -1,10 +1,6 @@
 /******************************************************************
-<<<<<<< HEAD
 Site Name:
 Author:
-=======
-Stylesheet: Main Stylesheet
->>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 ******************************************************************/
 
 /******************************************************************
@@ -43,10 +39,7 @@ dd {
 .commentlist {
   list-style: none;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 .clearfix {
   zoom: 1;
 }
@@ -58,10 +51,7 @@ dd {
 .clearfix:after {
   clear: both;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -72,11 +62,7 @@ dd {
   white-space: nowrap;
   overflow: hidden;
 }
-<<<<<<< HEAD
-*/
-=======
 
->>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 span.amp {
   font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
   font-style: italic;
@@ -326,20 +312,6 @@ a {
 	text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media only screen and (min-width: 481px) {
   /******************************************************************
@@ -487,4 +459,4 @@ PRINT STYLESHEET
     display: none;
   }
 }
->>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
+
