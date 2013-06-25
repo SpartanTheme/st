@@ -1,6 +1,10 @@
 /******************************************************************
+<<<<<<< HEAD
 Site Name:
 Author:
+=======
+Stylesheet: Main Stylesheet
+>>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 ******************************************************************/
 
 /******************************************************************
@@ -39,6 +43,10 @@ dd {
 .commentlist {
   list-style: none;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 .clearfix {
   zoom: 1;
 }
@@ -50,7 +58,10 @@ dd {
 .clearfix:after {
   clear: both;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,7 +72,11 @@ dd {
   white-space: nowrap;
   overflow: hidden;
 }
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
 span.amp {
   font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
   font-style: italic;
@@ -311,3 +326,165 @@ a {
 	text-decoration: none;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 481px) {
+  /******************************************************************
+  Stylesheet: 481px and Up Stylesheet
+  ******************************************************************/
+    
+ }
+
+@media only screen and (min-width: 768px) {
+  /******************************************************************
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  ******************************************************************/
+
+}
+
+@media only screen and (min-width: 1030px) {
+  /******************************************************************
+  Stylesheet: Desktop Stylsheet  
+  ******************************************************************/
+}
+/*
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*/
+@media only screen and (min-width: 1240px) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/
+}
+/*
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution.
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /******************************************************************
+Stylesheet: Retina Screens & Devices Stylesheet
+  ******************************************************************/
+  /* 
+  
+  EXAMPLE 
+  Let's say you have an image and you need to make sure it looks ok
+  on retina screens. Let's say we have an icon which dimension are
+  24px x 24px. In your regular stylesheets, it would look something
+  like this:
+  
+  .icon {
+  	width: 24px;
+  	height: 24px;
+  	background: url(img/test.png) no-repeat;
+  }
+  
+  For retina screens, we have to make some adjustments, so that image
+  doesn't look blurry. So, taking into account the image above and the
+  dimensions, this is what we would put in our retina stylesheet:
+  
+  .icon {
+  	background: url(img/test@2x.png) no-repeat;
+  	background-size: 24px 24px;
+  }
+  
+  So, you would create the same icon, but at double the resolution, meaning 
+  it would be 48px x 48px. You'd name it the same, but with a @2x at the end
+  (this is pretty standard practice). Set the background image so it matches
+  the original dimensions and you are good to go. 
+  
+  */
+}
+/*
+iPHONE 5 MEDIA QUERY
+Want to get fancy for no good reason? Knock yourself out.
+*/
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+}
+/*
+PRINT STYLESHEET
+*/
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:after,
+  a:visited:after {
+    content: " (" attr(href) ")";
+  }
+  a abbr[title]:after,
+  a:visited abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none;
+  }
+}
+>>>>>>> 1e269677e7117dd89724e25cefdc9a6890a892e7
