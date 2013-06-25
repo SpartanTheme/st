@@ -6,7 +6,7 @@
 		else echo('http://spartantheme.com/wp-content/uploads/spartan-theme-social.png');
 	};
 		
-	$my_query = new WP_Query('posts_per_page=1');  
+	$my_query = new WP_Query('posts_per_page=1&order=ASC'); 
 	while ($my_query->have_posts()) : $my_query->the_post();  
 
 	function spartan_soc_content() {
