@@ -5,9 +5,8 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 	<head>
-
-		<title><?php spartan_page_title(); //a better approach to the default ?></title>
 		<meta charset="utf-8">
+		<title><?php spartan_page_title(); //a better approach to the default ?></title>
 		<?php spartan_socs_meta(); ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
@@ -19,7 +18,6 @@
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
 		<?php wp_head(); ?>
 
 	</head>
