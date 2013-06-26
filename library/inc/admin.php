@@ -33,25 +33,25 @@ add_action('admin_menu', 'disable_default_dashboard_widgets');
 
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-function bones_login_css() {
-	wp_enqueue_style( 'bones_login_css', get_template_directory_uri() . '/library/css/login.css', false );
+function spartan_login_css() {
+	wp_enqueue_style( 'login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function bones_login_url() {  return home_url(); }
+function spartan_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function bones_login_title() { return get_option('blogname'); }
+function spartan_login_title() { return get_option('blogname'); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'bones_login_css', 10 );
-add_filter('login_headerurl', 'bones_login_url');
-add_filter('login_headertitle', 'bones_login_title');
+add_action( 'login_enqueue_scripts', 'login_css', 10 );
+add_filter('login_headerurl', 'spartan_login_url');
+add_filter('login_headertitle', 'spartan_login_title');
 
 
 /************* CUSTOMIZE ADMIN *******************/
 function spartan_custom_admin_footer() {
-	_e('<span id="footer-thankyou">Developed by <a href="http://wayruro.com" target="_blank">Wayruro</a></span>. Built using <a href="http://spartan.com/" target="_blank">Spartan</a>.', 'spartantheme');
+	_e('Built using <a href="http://spartantheme.com/" target="_blank">Spartan</a>.', 'spartantheme');
 }
 // adding it to the admin area
 add_filter('admin_footer_text', 'spartan_custom_admin_footer');
