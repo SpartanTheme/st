@@ -51,7 +51,7 @@ add_filter('login_headertitle', 'spartan_login_title');
 
 /************* CUSTOMIZE ADMIN *******************/
 function spartan_custom_admin_footer() {
-	_e('Built using <a href="http://spartantheme.com/" target="_blank">Spartan</a>.', 'spartantheme');
+	_e('Built using <a href="http://spartantheme.com/" target="_blank">Spartan WP</a>.', 'spartantheme');
 }
 // adding it to the admin area
 add_filter('admin_footer_text', 'spartan_custom_admin_footer');
