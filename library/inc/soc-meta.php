@@ -19,8 +19,11 @@
 		<meta name="description" content="<?php spartan_soc_content(); ?>">
 		<meta name="author" content="<?php the_author(); ?>">
 		
-		<meta name="twitter:site" content="@SpartanTheme">
 		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@SpartanTheme">
+		<meta name="twitter:domain" content="<?php spartan_domain(); ?>">
+		<meta name="twitter:creator" content="@SpartanTheme">
+		
 		<meta name="twitter:url" content="<?php the_permalink() ?>">
 		<meta name="twitter:title" content="<?php spartan_page_title(); ?>">
 		<meta name="twitter:description" content="<?php spartan_soc_content(); ?>">
