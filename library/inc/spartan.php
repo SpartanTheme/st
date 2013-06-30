@@ -523,11 +523,6 @@ function spartan_rich_snnipets() {
 		include('rich-snnipets.php');	
 }
 
-add_action( 'init', 'excerpts_to_pages' );
-function excerpts_to_pages() {
-     add_post_type_support( 'page', 'excerpt' );
-}
-
 function defer_parsing_of_js ( $url ) {
     if ( FALSE === strpos( $url, '.js' ) ) return $url;
     if ( strpos( $url, 'jquery.js' ) ) return $url;
