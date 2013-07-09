@@ -46,15 +46,15 @@
 
 							<?php else : ?>
 
-									<article id="post-not-found" class="hentry clearfix">
-											<header class="article-header">
-												<h1><?php _e("Oops, Post Not Found!", "spartantheme"); ?></h1>
+									<article id="post-not-found" class="hentry clearfix" role="article" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+										<header class="article-header">
+											<h1  itemprop="headline"><?php _e("Oops, Post Not Found!", "spartantheme"); ?></h1>
 										</header>
-											<section class="entry-content">
-												<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "spartantheme"); ?></p>
+										<section class="entry-content">
+											<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "spartantheme"); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e("This is the error message in the index.php template.", "spartantheme"); ?></p>
+											<p><?php _e("This is the error message in the index.php template.", "spartantheme"); ?></p>
 										</footer>
 									</article>
 
