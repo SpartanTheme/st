@@ -181,6 +181,48 @@ function spartan_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
 
+// add metas
+add_action('wp_head', 'compatible', 1);
+function compatible() {
+	echo "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">";
+}
+add_action('wp_head', 'viewport', 1);
+function viewport() {
+	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>";
+}
+add_action('wp_head', 'wpsym_head', 4);
+function wpsym_head() {
+	echo '<meta name="application-name" content="';
+	echo bloginfo('name');
+	echo '" />';
+}
+add_action('wp_head', 'wpsym_head3', 4);
+function wpsym_head3() {
+	echo "<meta name=\"msapplication-TileColor\" content=\"#f01d4f\">";
+}
+add_action('wp_head', 'win8_tile', 4);
+function win8_tile() {
+	echo '<meta name="msapplication-TileImage" content="' . get_template_directory_uri() . '/library/images/win8-tile-icon.png">';
+}
+add_action('wp_head', 'wpsym_head4', 4);
+function wpsym_head4() {
+	echo "<meta http-equiv=\"imagetoolbar\" content=\"false\">";
+}
+add_action('wp_head', 'wpsym_head2', 4);
+function wpsym_head2() {
+	echo '<link rel="shortcut icon" href="' . get_template_directory_uri() .'/favicon.ico">';
+}
+add_action('wp_head', 'wpsym_head1', 4);
+function wpsym_head1() {
+	echo '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/library/images/apple-icon-touch.png">';
+}
+add_action('wp_head', 'pings', 3);
+function pings() {
+	echo '<link rel="pingback" href="';
+	echo bloginfo('pingback_url');
+	echo '" />';
+}
+
 
 /*********************
 SCRIPTS & ENQUEUEING
