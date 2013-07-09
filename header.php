@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<html <?php language_attributes(); ?>>
 
 	<head>
 		<meta charset="utf-8">
@@ -22,16 +19,16 @@
 
 	</head>
 
-	<body <?php body_class(); ?>> 
+	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage"> 
 	<!--<?php spartan_tpl(); ?>-->
 
-		<div id="container">
+		<div id="page">
 
-			<header class="header" role="banner">
+			<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<a id="logo" class="h1" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a>	
+					<p class="site-title" itemprop="name" ><a id="logo" class="h1" href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" ><?php bloginfo( 'name' ); ?></a></p>	
 					<span id="slogan"><?php bloginfo('description'); ?></span>
 					
 					<a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a>
@@ -41,7 +38,7 @@
 
 				</div><!-- #inner-header -->
 				
-				<nav role="navigation">
+				<nav role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 					<?php spartan_main_nav(); // this prints the navigation ?>
 				</nav>
 

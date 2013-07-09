@@ -4,18 +4,17 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="eightcol first clearfix" role="main" itemprop="mainContentOfPage">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
 								<header class="article-header">
 
-									<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline vcard"><?php
-										printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'spartantheme'), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), spartan_get_the_author_posts_link(), get_the_category_list(', '));
-									?></p>
+									<h1 class="h2" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+									<time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date(); ?></time>
+									<p class="byline author vcard"><?php echo __('By', 'spartan'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a></p>
 
 								</header> <!-- article header -->
 
