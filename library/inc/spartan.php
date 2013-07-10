@@ -1,8 +1,5 @@
 <?php
 /* Spartan Theme
-
-Enqueue scripts and stylesheets
-
 Developed by: Renzo Johnson
 URL: http://spartantheme.com/
 */
@@ -73,12 +70,6 @@ function spartan_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
-
-add_action( 'init', 'excerpts_to_pages' );
-function excerpts_to_pages() {
-     add_post_type_support( 'page', 'excerpt' );
-}
-
 
 
 
@@ -180,8 +171,9 @@ function spartan_remove_recent_comments_style() {
 function spartan_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
-
-// add metas
+/*********************
+METAS, SCRIPTS & ENQUEUEING
+*********************/
 add_action('wp_head', 'compatible', 1);
 function compatible() {
 	echo "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">";
@@ -223,50 +215,40 @@ function pings() {
 	echo '" />';
 }
 
-
-/*********************
-SCRIPTS & ENQUEUEING
-*********************/
-
-// loading modernizr and jquery, and reply script
 function spartan_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
   
 		wp_register_style( 'normalize', get_stylesheet_directory_uri() . '/library/css/normalize.css', array(), '', 'all' );
 		wp_register_style( 'fonts', get_stylesheet_directory_uri() . '/library/css/fonts.css', array(), '', 'all' );
-		wp_register_style( 'nav', get_stylesheet_directory_uri() . '/library/css/nav.css', array(), '', 'all' );
 		wp_register_style( 'global', get_stylesheet_directory_uri() . '/library/css/global.css', array(), '', 'all' );
 		wp_register_style( 'ie', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
-		
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, false);
-		add_filter('script_loader_src', 'spartan_jquery_local_fallback', 10, 2);
-  	    	  
 
     // modernizr (without media query polyfill)
     wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
+    
+    // jquery file in the footer
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, true);
+    add_filter('script_loader_src', 'spartan_jquery_local_fallback', 10, 2);
+		
+		//adding scripts file in the footer
+		wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+    
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
     }
 
-    //adding scripts file in the footer
-    wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-
     // enqueue styles and scripts
     wp_enqueue_style( 'normalize' );
 		wp_enqueue_style( 'fonts' );
-		wp_enqueue_style( 'nav' );
 		wp_enqueue_style( 'global' );
-		wp_enqueue_script('jquery');
-		wp_enqueue_script( 'modernizr' );
-		
     wp_enqueue_style('ie');
 
     $wp_styles->add_data( 'ie', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
     
+    wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'scripts' );
 
@@ -304,8 +286,8 @@ function spartan_theme_support() {
 	set_post_thumbnail_size(125, 125, true);
 	
 	// Thumbnail sizes
-	add_image_size( 'spartan-thumb-600', 600, 150, true );
-	add_image_size( 'spartan-thumb-300', 300, 100, true );
+	//add_image_size( 'spartan-thumb-600', 600, 150, true );
+	//add_image_size( 'spartan-thumb-300', 300, 100, true );
 
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
@@ -565,11 +547,17 @@ function spartan_rich_snnipets() {
 		include('rich-snnipets.php');	
 }
 
-function defer_parsing_of_js ( $url ) {
-    if ( FALSE === strpos( $url, '.js' ) ) return $url;
-    if ( strpos( $url, 'jquery.js' ) ) return $url;
-    return "$url' async onload='myinit()";
+add_action( 'init', 'excerpts_to_pages' );
+function excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
 }
-add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+
+
+//function defer_parsing_of_js ( $url ) {
+//    if ( FALSE === strpos( $url, '.js' ) ) return $url;
+//    if ( strpos( $url, 'jquery.js' ) ) return $url;
+//    return "$url' async onload='myinit()";
+//}
+//add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 
 ?>
