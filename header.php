@@ -18,7 +18,7 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<p class="site-title" itemprop="name" ><a id="logo" class="h1" href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" ><?php bloginfo( 'name' ); ?></a></p>	
+					<p class="site-title" itemprop="name" ><a id="logo" class="h1" href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?>"><?php bloginfo( 'name' ); ?></a></p>	
 					<span id="slogan"><?php bloginfo('description'); ?></span>
 					
 					<a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a>
