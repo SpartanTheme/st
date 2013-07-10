@@ -215,6 +215,36 @@ function pings() {
 	echo '" />';
 }
 
+// Clean up output of stylesheet <link> tags
+function spartan_clean_style_tag($input) {
+  preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
+  // Only display media if it is meaningful
+  $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
+  return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
+}
+add_filter('style_loader_tag', 'spartan_clean_style_tag');
+
+/**
+ * Add and remove body_class() classes
+ */
+function spartan_body_class($classes) {
+  // Add post/page slug
+  if (is_single() || is_page() && !is_front_page()) {
+    $classes[] = basename(get_permalink());
+  }
+
+  // Remove unnecessary classes
+  $home_id_class = 'page-id-' . get_option('page_on_front');
+  $remove_classes = array(
+    'page-template-default',
+    $home_id_class
+  );
+  $classes = array_diff($classes, $remove_classes);
+
+  return $classes;
+}
+add_filter('body_class', 'spartan_body_class');
+
 function spartan_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
@@ -551,6 +581,103 @@ add_action( 'init', 'excerpts_to_pages' );
 function excerpts_to_pages() {
      add_post_type_support( 'page', 'excerpt' );
 }
+
+// Disable post revision
+define('WP_POST_REVISIONS', false);
+define('WP_POST_REVISIONS', 0);
+// Empty trash
+define('EMPTY_TRASH_DAYS', 0 );
+
+//Change location of the Plugins & WordPress Themes folder
+//define(‘WP_CONTENT_DIR’, ‘http://www.labnol.org/assets/wp-content’);
+
+//Disallow direct file edition
+define('DISALLOW_FILE_EDIT', TRUE);
+
+// auto-insert content to post editor
+function my_editor_content($content) {
+	$content = "<h5>Thank you for developing with Spartan Theme.</h5>.";
+	return $content;
+}
+add_filter('default_content', 'my_editor_content');
+
+//Hide  display of unnecessary information on failed login attempts
+function wrong_login() {
+return 'Wrong username or password.';
+}
+add_filter('login_errors', 'wrong_login');
+
+// browser detection via body_class
+//function browser_body_class($classes) {
+//
+//    global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+//
+//    if($is_lynx)       $classes[] = 'lynx';
+//    elseif($is_gecko)  $classes[] = 'gecko';
+//    elseif($is_opera)  $classes[] = 'opera';
+//    elseif($is_NS4)    $classes[] = 'ns4';
+//    elseif($is_safari) $classes[] = 'safari';
+//    elseif($is_chrome) $classes[] = 'chrome';
+//    elseif($is_IE)     $classes[] = 'ie';
+//    else               $classes[] = 'unknown';
+//
+//    if($is_iphone) $classes[] = 'iphone';
+//    return $classes;
+//
+//}
+//add_filter('body_class','browser_body_class');
+
+// Add the browser name and version to the body class
+function mytheme_body_class( $class ) {
+		$arr = array(
+		'msie',
+		'firefox',
+		'webkit',
+		'opera'
+		);
+		$agent = strtolower( $_SERVER['HTTP_USER_AGENT'] );
+		
+		foreach( $arr as $name ) {
+		if( strpos( $agent, $name ) > -1 ) {
+		$class[] = $name;
+		
+		preg_match( '/' . $name . '[\/|\s](\d)/i', $agent, $matches );
+		if ( $matches[1] )
+		$class[] = $name . '-' . $matches[1];
+		
+		return $class;
+		}
+		}
+		
+		return $class;
+}
+add_filter( 'body_class', 'mytheme_body_class' );
+
+//Browser detection and OS detection with body_class
+function mv_browser_body_class($classes) {
+      global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+      if($is_lynx) $classes[] = 'lynx';
+      elseif($is_gecko) $classes[] = 'gecko';
+      elseif($is_opera) $classes[] = 'opera';
+      elseif($is_NS4) $classes[] = 'ns4';
+      elseif($is_safari) $classes[] = 'safari';
+      elseif($is_chrome) $classes[] = 'chrome';
+      elseif($is_IE) {
+              $classes[] = 'ie';
+              if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version))
+              $classes[] = 'ie'.$browser_version[1];
+      } else $classes[] = 'unknown';
+      if($is_iphone) $classes[] = 'iphone';
+      if ( stristr( $_SERVER['HTTP_USER_AGENT'],"mac") ) {
+               $classes[] = 'osx';
+         } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"linux") ) {
+               $classes[] = 'linux';
+         } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"windows") ) {
+               $classes[] = 'windows';
+         }
+      return $classes;
+}
+add_filter('body_class','mv_browser_body_class');
 
 
 //function defer_parsing_of_js ( $url ) {
