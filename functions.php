@@ -1,15 +1,10 @@
 <?php
 /*
 Author: Renzo Johnson
-URL: http://renzojohnson.com/spartan/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
+URL: http://spartantheme.com
+URL: http://renzojohnson.com/spartan
 */
 
-require_once('library/inc/spartan.php');
-require_once('library/inc/custom-post-type.php');
-require_once('library/inc/admin.php');
-
-
+require_once( get_template_directory() . '/library/inc/spartan.php');
+require_once( get_template_directory() . '/library/inc/custom-post-type.php');
+require_once( get_template_directory() . '/library/inc/admin.php');

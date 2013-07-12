@@ -607,28 +607,8 @@ return 'Wrong username or password.';
 }
 add_filter('login_errors', 'wrong_login');
 
-// browser detection via body_class
-//function browser_body_class($classes) {
-//
-//    global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-//
-//    if($is_lynx)       $classes[] = 'lynx';
-//    elseif($is_gecko)  $classes[] = 'gecko';
-//    elseif($is_opera)  $classes[] = 'opera';
-//    elseif($is_NS4)    $classes[] = 'ns4';
-//    elseif($is_safari) $classes[] = 'safari';
-//    elseif($is_chrome) $classes[] = 'chrome';
-//    elseif($is_IE)     $classes[] = 'ie';
-//    else               $classes[] = 'unknown';
-//
-//    if($is_iphone) $classes[] = 'iphone';
-//    return $classes;
-//
-//}
-//add_filter('body_class','browser_body_class');
-
 // Add the browser name and version to the body class
-function mytheme_body_class( $class ) {
+function browser_class( $class ) {
 		$arr = array(
 		'msie',
 		'firefox',
@@ -639,22 +619,23 @@ function mytheme_body_class( $class ) {
 		
 		foreach( $arr as $name ) {
 		if( strpos( $agent, $name ) > -1 ) {
-		$class[] = $name;
-		
-		preg_match( '/' . $name . '[\/|\s](\d)/i', $agent, $matches );
-		if ( $matches[1] )
-		$class[] = $name . '-' . $matches[1];
-		
-		return $class;
-		}
+			$class[] = $name;
+			
+			preg_match( '/' . $name . '[\/|\s](\d)/i', $agent, $matches );
+			if ( $matches[1] )
+			$class[] = $name . '-' . $matches[1];
+			
+			return $class;
+			}
 		}
 		
 		return $class;
 }
-add_filter( 'body_class', 'mytheme_body_class' );
+add_filter( 'body_class', 'browser_class' );
 
 //Browser detection and OS detection with body_class
-function mv_browser_body_class($classes) {
+function browser_os_class($classes) {
+      
       global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
       if($is_lynx) $classes[] = 'lynx';
       elseif($is_gecko) $classes[] = 'gecko';
@@ -676,8 +657,10 @@ function mv_browser_body_class($classes) {
                $classes[] = 'windows';
          }
       return $classes;
+      
+      
 }
-add_filter('body_class','mv_browser_body_class');
+add_filter('body_class','browser_os_class');
 
 
 //function defer_parsing_of_js ( $url ) {
