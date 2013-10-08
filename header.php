@@ -12,7 +12,7 @@
 	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage"> 
 	<!--<?php spartan_tpl(); ?>-->
 
-		<div id="page">
+		<div  id="page" class="hfeed site">
 
 			<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 

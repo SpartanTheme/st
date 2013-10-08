@@ -3,71 +3,6 @@ Site Name:
 Author:
 ******************************************************************/
 
-/******************************************************************
-CUSTOMIZED RESET VALUES
-******************************************************************/
-p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-b,
-strong,
-.strong {
-  font-weight: bold;
-}
-dfn,
-em,
-.em {
-  font-style: italic;
-}
-small,
-.small {
-  font-size: 75%;
-}
-ul,
-ol {
-  padding: 0;
-  list-style-type: none;
-}
-dd {
-  margin: 0;
-}
-.sidebar ul,
-.sidebar ol,
-.commentlist {
-  list-style: none;
-}
-
-.clearfix {
-  zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-span.amp {
-  font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
-  font-style: italic;
-}
-
 html,
 body {
 
@@ -78,7 +13,7 @@ body {
   line-height: 1.5;
   color: #000;
   background: #fff;
-  
+
 }
 
 body * {
@@ -97,25 +32,6 @@ body * {
 	position: relative;
 }
 
-.nav li,
-.socs li {
-	position: relative;
-	display: inline-block;
-}
-
-.nav li a,
-.socs li a {
-	background-color: rgba(0, 0, 0, .35);
-	margin-right: 10px;
-	padding: 2px 20px;
-	text-transform: uppercase;
-	font-size: 12px;
-	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-
 .copyright,
 .copyright a {
 	font-size: 12px;
@@ -131,9 +47,9 @@ body * {
 	padding: 0;
 	line-height: 1em;
 	display: block;
-	
+
 	opacity: 0;
-	
+
 	color: #bb3825;
 }
 
@@ -163,18 +79,18 @@ body * {
 
 
 h1,
-h2, 
-h3, 
-h4, 
-h5, 
+h2,
+h3,
+h4,
+h5,
 h6,
 .h1,
-.h2, 
-.h3, 
-.h4, 
-.h5, 
+.h2,
+.h3,
+.h4,
+.h5,
 .h6 {
-	font-family: League Gothic;
+
 }
 
 a {
@@ -187,7 +103,7 @@ a {
   /******************************************************************
   Stylesheet: 481px and Up Stylesheet
   ******************************************************************/
-    
+
  }
 
 @media only screen and (min-width: 768px) {
@@ -199,7 +115,7 @@ a {
 
 @media only screen and (min-width: 1030px) {
   /******************************************************************
-  Stylesheet: Desktop Stylsheet  
+  Stylesheet: Desktop Stylsheet
   ******************************************************************/
 }
 /*
@@ -208,14 +124,14 @@ This is for the larger monitors and possibly full screen viewers.
 */
 @media only screen and (min-width: 1240px) {
   /******************************************************************
-  Site Name: 
-  Author: 
-  
+  Site Name:
+  Author:
+
   Stylesheet: Super Large Monitor Stylesheet
-  
+
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
-  
+
   ******************************************************************/
 }
 /*
@@ -227,34 +143,34 @@ other displays with a 2x resolution.
   /******************************************************************
 Stylesheet: Retina Screens & Devices Stylesheet
   ******************************************************************/
-  /* 
-  
-  EXAMPLE 
+  /*
+
+  EXAMPLE
   Let's say you have an image and you need to make sure it looks ok
   on retina screens. Let's say we have an icon which dimension are
   24px x 24px. In your regular stylesheets, it would look something
   like this:
-  
+
   .icon {
   	width: 24px;
   	height: 24px;
   	background: url(img/test.png) no-repeat;
   }
-  
+
   For retina screens, we have to make some adjustments, so that image
   doesn't look blurry. So, taking into account the image above and the
   dimensions, this is what we would put in our retina stylesheet:
-  
+
   .icon {
   	background: url(img/test@2x.png) no-repeat;
   	background-size: 24px 24px;
   }
-  
-  So, you would create the same icon, but at double the resolution, meaning 
+
+  So, you would create the same icon, but at double the resolution, meaning
   it would be 48px x 48px. You'd name it the same, but with a @2x at the end
   (this is pretty standard practice). Set the background image so it matches
-  the original dimensions and you are good to go. 
-  
+  the original dimensions and you are good to go.
+
   */
 }
 /*
@@ -262,7 +178,7 @@ iPHONE 5 MEDIA QUERY
 Want to get fancy for no good reason? Knock yourself out.
 */
 @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-  
+
 }
 /*
 PRINT STYLESHEET
