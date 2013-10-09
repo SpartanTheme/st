@@ -10,73 +10,18 @@ body {
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 100%;
-  line-height: 1.5;
-  color: #000;
+  line-height: 1.3;
+  color: #1a1a1a;
   background: #fff;
 
 }
 
 body * {
-	-webkit-transition: all .5s ease-in-out;
-		-moz-transition: all .5s ease-in-out;
-		-o-transition: all .5s ease-in-out;
-		transition: all .5s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
-
-.header,
-#content,
-.footer {
-	width: 90%;
-	margin: 0 auto;
-	max-width: 940px;
-	position: relative;
-}
-
-.copyright,
-.copyright a {
-	font-size: 12px;
-	color: #aaa;
-}
-
-#logo,
-#slogan {
-	font-size: 124px;
-	text-align: center;
-	text-transform: uppercase;
-	margin: 0;
-	padding: 0;
-	line-height: 1em;
-	display: block;
-
-	opacity: 0;
-
-	color: #bb3825;
-}
-
-.loaded #logo,
-.loaded #slogan {
-	opacity: 1;
-}
-
-#logo span {
-	display: block;
-	clear: both;
-	font-size:0;
-	line-height: 0;
-
-}
-#slogan {
-	display: block;
-	clear: both;
-	font-size: 16px;
-	color: #2455c3;
-}
-.header iframe {
-	position: absolute;
-	right: 0;
-	top: 20px;
-}
-
 
 h1,
 h2,
@@ -90,13 +35,46 @@ h6,
 .h4,
 .h5,
 .h6 {
-
+  line-height: 1;
+  margin-top: 0;
+  text-rendering: optimizeLegibility; /*  voodoo for ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
+  color: orange;
 }
 
 a {
-	color: #fff;
-	text-decoration: none;
+  color: orange;
+  text-decoration: none;
 }
+
+#page {
+
+}
+.header,
+.content,
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.header,
+.footer {
+  background-color: #1a1a1a;
+}
+.header-inr,
+.content-inr,
+.footer-inr {
+  width: 960px;
+  margin: 0 auto;
+}
+.header-inr {
+  max-height: 61px;
+  overflow: hidden;
+}
+.copyright,
+.copyright a {
+  font-size: 12px;
+}
+
 
 
 @media only screen and (min-width: 481px) {
