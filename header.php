@@ -10,7 +10,7 @@
 	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 	<!--<?php spartan_tpl(); //this prints the template file being used ?>-->
 
-		<div id="page">
+		<div class="body-inr">
 
 			<header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 				<div class="header-inr clearfix">
