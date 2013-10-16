@@ -2,7 +2,7 @@
 
 			<div class="content">
 
-				<div class="content-inr wrap clearfix">
+				<div class="content-inr clearfix">
 
 						<div class="main clearfix" role="main" itemprop="mainContentOfPage">
 
@@ -12,9 +12,7 @@
 
 								<header class="article-header">
 
-									<h1 class="h2" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date(); ?></time>
-									<p class="byline author vcard"><?php echo __('By', 'spartan'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a></p>
+									<h1 class="entry-title" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
 								</header> <!-- article header -->
 
@@ -23,11 +21,34 @@
 								</section> <!-- article section -->
 
 								<footer class="article-footer">
+									<div class="entry-author-info">
+						        <h4>About the Author</h4>
+						        <p>
+						          <?php echo get_avatar(get_the_author_meta('email'),90) ?>
+						          <?php the_author_description(); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">">More info…</a>
+						        </p>
+						      </div>
+
+									<div class="subscribe">
+						        <h4>Site Updates</h4>
+						          <form action="site" method="post" id="mc-embedded-subscribe-form" class="newsletter" name="mc-embedded-subscribe-form" target="_blank">
+										    <div class="input-group">
+										      <input type="email" value="" name="EMAIL" class="form-control required email" id="mce-EMAIL" placeholder="Email Address">
+										      <span class="input-group-btn">
+										        <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Subscribe</button>
+										      </span>
+										    </div>
+										  </form>
+						        <p>Sign up for our newsletter and get the latest updates before anyone else.</p>
+						      </div>
+
 									<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'spartantheme') . '</span> ', ', ', ''); ?></p>
+									<p class="byline author vcard"><time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date(); ?></time>
+									<?php echo __('By', 'spartan'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a></p>
 
 								</footer> <!-- article footer -->
 
-								<?php include('library/inc/comments.php') ?>
+								<?php comments_template( '', true ); ?>
 
 							</article>
 
