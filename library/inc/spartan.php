@@ -670,7 +670,7 @@ add_filter('body_class','browser_os_class');
 //}
 //add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 
-require_once( get_template_directory() . 'wp-less/wp-less.php' );
+require_once( get_template_directory() . '/library/inc/wp-less/wp-less.php' );
 
 if ( ! is_admin() )
     wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/library/less/styles.less' );
