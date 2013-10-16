@@ -249,9 +249,6 @@ function spartan_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
 
-		wp_register_style( 'normalize', get_stylesheet_directory_uri() . '/library/css/normalize.css', array(), '', 'all' );
-		wp_register_style( 'fonts', get_stylesheet_directory_uri() . '/library/css/fonts.css', array(), '', 'all' );
-		wp_register_style( 'global', get_stylesheet_directory_uri() . '/library/css/global.css', array(), '', 'all' );
 		wp_register_style( 'ie', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
     // modernizr (without media query polyfill)
@@ -674,7 +671,6 @@ require_once( get_template_directory() . '/library/inc/wp-less/wp-less.php' );
 
 if ( ! is_admin() )
     wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/library/less/styles.less' );
-
 
     add_filter( 'wp_less_cache_path', 'custom_less_cache_path' );
     add_filter( 'wp_less_cache_url', 'custom_less_cache_url' );

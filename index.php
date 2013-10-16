@@ -25,7 +25,7 @@
 						        <h4>About the Author</h4>
 						        <p>
 						          <?php echo get_avatar(get_the_author_meta('email'),90) ?>
-						          <?php the_author_description(); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">">More info…</a>
+						          <?php the_author_description(); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">More info…</a>
 						        </p>
 						      </div>
 
