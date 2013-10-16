@@ -248,7 +248,7 @@ add_filter('body_class', 'spartan_body_class');
 function spartan_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
-  
+
 		wp_register_style( 'normalize', get_stylesheet_directory_uri() . '/library/css/normalize.css', array(), '', 'all' );
 		wp_register_style( 'fonts', get_stylesheet_directory_uri() . '/library/css/fonts.css', array(), '', 'all' );
 		wp_register_style( 'global', get_stylesheet_directory_uri() . '/library/css/global.css', array(), '', 'all' );
@@ -256,15 +256,15 @@ function spartan_scripts_and_styles() {
 
     // modernizr (without media query polyfill)
     wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-    
+
     // jquery file in the footer
     wp_deregister_script('jquery');
     wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, true);
     add_filter('script_loader_src', 'spartan_jquery_local_fallback', 10, 2);
-		
+
 		//adding scripts file in the footer
 		wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-    
+
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
@@ -277,7 +277,7 @@ function spartan_scripts_and_styles() {
     wp_enqueue_style('ie');
 
     $wp_styles->add_data( 'ie', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-    
+
     wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'scripts' );
@@ -314,7 +314,7 @@ function spartan_theme_support() {
 
 	// default thumb size
 	set_post_thumbnail_size(125, 125, true);
-	
+
 	// Thumbnail sizes
 	//add_image_size( 'spartan-thumb-600', 600, 150, true );
 	//add_image_size( 'spartan-thumb-300', 300, 100, true );
@@ -557,7 +557,7 @@ function spartan_domain() {
 		$domain = get_option('siteurl'); //or home
 		$domain = str_replace('http://', '', $domain);
 		$domain = str_replace('www', '', $domain); //add the . after the www if you don't want it
-		
+
 		echo $domain;
 }
 
@@ -566,15 +566,15 @@ function spartan_tpl() {
 }
 
 function spartan_socs() {
-		include('soc.php');	
+		include('soc.php');
 }
 
 function spartan_socs_meta() {
-		include('soc-meta.php');	
+		include('soc-meta.php');
 }
 
 function spartan_rich_snnipets() {
-		include('rich-snnipets.php');	
+		include('rich-snnipets.php');
 }
 
 add_action( 'init', 'excerpts_to_pages' );
@@ -616,26 +616,26 @@ function browser_class( $class ) {
 		'opera'
 		);
 		$agent = strtolower( $_SERVER['HTTP_USER_AGENT'] );
-		
+
 		foreach( $arr as $name ) {
 		if( strpos( $agent, $name ) > -1 ) {
 			$class[] = $name;
-			
+
 			preg_match( '/' . $name . '[\/|\s](\d)/i', $agent, $matches );
 			if ( $matches[1] )
 			$class[] = $name . '-' . $matches[1];
-			
+
 			return $class;
 			}
 		}
-		
+
 		return $class;
 }
 add_filter( 'body_class', 'browser_class' );
 
 //Browser detection and OS detection with body_class
 function browser_os_class($classes) {
-      
+
       global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
       if($is_lynx) $classes[] = 'lynx';
       elseif($is_gecko) $classes[] = 'gecko';
@@ -657,8 +657,8 @@ function browser_os_class($classes) {
                $classes[] = 'windows';
          }
       return $classes;
-      
-      
+
+
 }
 add_filter('body_class','browser_os_class');
 
@@ -669,5 +669,26 @@ add_filter('body_class','browser_os_class');
 //    return "$url' async onload='myinit()";
 //}
 //add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+
+require_once( get_template_directory() . 'wp-less/wp-less.php' );
+
+if ( ! is_admin() )
+    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/library/less/styles.less' );
+
+
+    add_filter( 'wp_less_cache_path', 'custom_less_cache_path' );
+    add_filter( 'wp_less_cache_url', 'custom_less_cache_url' );
+
+    function custom_less_cache_path( $path )
+    {
+        return get_stylesheet_directory().'/library/css';
+    }
+
+    function custom_less_cache_url( $url )
+    {
+        return get_stylesheet_directory_uri().'/library/css';
+    }
+
+
 
 ?>
