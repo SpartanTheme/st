@@ -13,14 +13,18 @@
 		<div class="site">
 
 			<header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+
 				<div class="header-inr clearfix">
+
 					<p class="site-title" itemprop="name" ><a id="logo" class="h1" href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?> - <?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></p>
+					<?php spartan_socs();  // this prints social icons ?>
 
 				</div><!-- #inner-header -->
 
 				<nav class="navigation clearfix" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
 					<?php spartan_main_nav(); // this prints the navigation ?>
-					<?php spartan_socs();  // this prints social icons ?>
+
 				</nav>
 
 			</header>
