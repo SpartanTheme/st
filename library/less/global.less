@@ -8,47 +8,117 @@ body {
 
 }
 body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 100%;
-  line-height: 1.4;
-  color: #1a1a1a;
   background: #fff;
+  color: #636466;
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
 }
 a,
 a:visited {
-  color: #1a1a1a;
+  color: #ca2129;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
+h1,
+h1 a {
+  color: #167daf;
+}
 
 .site {
-
+  border-top: 5px solid #ca2129;
+}
+#logo {
+  color: #2e98cc;
 }
 
 .header,
 .navigation,
 .content,
 .footer {
-  width: 100%;
-  margin: 0 auto;
   position: relative;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.header,
-.footer {
-  background-color: #1a1a1a;
+.navigation {
+  background: #2e98cc;
+}
+
+.header {
+  padding-top: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .header-inr,
 .nav,
 .content-inr,
 .footer-inr {
-  max-width: 960px;
   margin: 0 auto;
+  max-width: 1200px;
 }
+
+.article-footer  .newsletter {
+margin-bottom: 1rem;
+background: #eee;
+}
+.input-group {
+position: relative;
+display: table;
+border-collapse: separate;
+}
+.article-footer {
+  padding: 1rem;
+  margin-bottom: 21px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  font-size: 16px;
+}
+.article-footer h4 {
+  font-weight: 600;
+  clear: left;
+}
+.article-footer img {
+  float: left;
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  color: #fff;
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
 
 .copyright,
 .copyright a {
@@ -85,6 +155,22 @@ a:hover {
     border-top: 3px solid orange;
   }
 
+  .main,
+  #sidebar {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+    width: 620px;
+  }
+  #sidebar {
+    width: 300px;
+    background: #efefef;
+  }
+  #sidebar .widget {
+   padding: 20px;
+  }
+
 }
 /*
 LARGE VIEWING SIZE
@@ -103,6 +189,21 @@ This is for the larger monitors and possibly full screen viewers.
   ******************************************************************/
   body {
     border-top: 3px solid lightgreen;
+  }
+  .main,
+  #sidebar {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+    width: 770px;
+  }
+  #sidebar {
+    width: 370px;
+    background: #efefef;
+  }
+  #sidebar .widget {
+   padding: 20px;
   }
 
 }
@@ -127,9 +228,9 @@ Stylesheet: Retina Screens & Devices Stylesheet
   like this:
 
   .icon {
-  	width: 24px;
-  	height: 24px;
-  	background: url(img/test.png) no-repeat;
+    width: 24px;
+    height: 24px;
+    background: url(img/test.png) no-repeat;
   }
 
   For retina screens, we have to make some adjustments, so that image
@@ -137,8 +238,8 @@ Stylesheet: Retina Screens & Devices Stylesheet
   dimensions, this is what we would put in our retina stylesheet:
 
   .icon {
-  	background: url(img/test@2x.png) no-repeat;
-  	background-size: 24px 24px;
+    background: url(img/test@2x.png) no-repeat;
+    background-size: 24px 24px;
   }
 
   So, you would create the same icon, but at double the resolution, meaning
@@ -165,8 +266,8 @@ PRINT STYLESHEET
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    filter: none !important;
     -ms-filter: none !important;
+    filter: none !important;
   }
   a,
   a:visited {
