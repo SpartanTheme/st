@@ -9,23 +9,33 @@
 
 	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 	<!--<?php spartan_tpl(); //this prints the template file being used ?>-->
-	<div id="noise"></div>
 
-		<div class="off-canvas-wrap">
+		<div class="marketing off-canvas-wrap">
 			<div class="inner-wrap">
 
-				<aside class="left-off-canvas-menu">
+			<a class="left-off-canvas-toggle" >Menu</a>
 
-					<h1 class="site-title"><a href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?> - <?php bloginfo('description'); ?>">Renzo Johnson</a></h1>
-					<?php spartan_mobile_nav(); // this prints the navigation ?>
+			<aside class="left-off-canvas-menu">
+			<?php spartan_mobile_nav(); // this prints the navigation ?>
 
-				</aside>
-
-				<a class="left-off-canvas-toggle menu-icon" ><span> </span></a>
-				<header class="row" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
-
-						<h2 class="site-title columns"><a href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?> - <?php bloginfo('description'); ?>">Renzo Johnson</a></h2>
-
-				</header>
+			</aside>
 
 
+			<a class="exit-off-canvas"></a>
+
+			<header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+
+				<div class="header-inr clearfix">
+
+					<p class="site-title" itemprop="name" ><a id="logo" class="h1" href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?> - <?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></p>
+					<?php spartan_socs();  // this prints social icons ?>
+
+				</div>
+
+				<nav class="top-bar docs-bar hide-for-small" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+					<?php spartan_top_nav(); // this prints the navigation ?>
+
+				</nav>
+
+			</header>
