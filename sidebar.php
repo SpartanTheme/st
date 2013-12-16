@@ -1,13 +1,18 @@
-<aside <?php post_class('sidebar large-3 columns'); ?> role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+<aside <?php post_class('sidebar large-3 medium-3 columns  f-left hide-for-small'); ?> role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 
-		<?php dynamic_sidebar( 'sidebar1' ); ?>
+<?php
 
-	<?php else : ?>
+	$t=date("H");
 
-		<div class="alert">
-			<p><?php _e("Please activate some Widgets.", "spartantheme");  ?></p>
-		</div>
+	if ($t<"22" && $t>"5")
+	 {
+		dynamic_sidebar( 'sidebar1' );
+		}
 
-	<?php endif; ?>
+	else {
+		dynamic_sidebar( 'sidebar2' );
+	}
+
+?>
+
 </aside>
