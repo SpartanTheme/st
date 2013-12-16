@@ -17,7 +17,7 @@ function spartan_top_nav() {
       'link_before' => '',                          // before each link
       'link_after' => '',                           // after each link
       'depth' => 0,                                 // limit the depth of the nav
-      'fallback_cb' => 'spartan_top_nav_fallback'   // fallback function
+      'fallback_cb' => 'spartan_nav_fallback'   // fallback function
   ));
 } /* end spartan main nav */
 
@@ -35,7 +35,7 @@ function spartan_footer_nav() {
       'link_before' => '',                              // before each link
       'link_after' => '',                               // after each link
       'depth' => 0,                                     // limit the depth of the nav
-      'fallback_cb' => 'spartan_footer_nav_fallback'    // fallback function
+      'fallback_cb' => 'spartan_nav_fallback'    // fallback function
   ));
 } /* end spartan footer link */
 
@@ -53,7 +53,7 @@ function spartan_footer2_nav() {
       'link_before' => '',                              // before each link
       'link_after' => '',                               // after each link
       'depth' => 0,                                     // limit the depth of the nav
-      'fallback_cb' => 'spartan_footer_nav_fallback'    // fallback function
+      'fallback_cb' => 'spartan_nav_fallback'    // fallback function
   ));
 } /* end spartan footer link */
 
@@ -62,7 +62,7 @@ function spartan_mobile_nav() {
   // display the wp3 menu if available
     wp_nav_menu(array(
       'container' => '',                                  // remove nav container
-      'container_class' => 'menu clearfix',               // class of container (should you choose to use it)
+      'container_class' => 'menu',               // class of container (should you choose to use it)
       'menu' => __( 'Mobile Nav', 'spartantheme' ),  // nav name
       'menu_class' => 'nav mob',                          // adding custom nav class
       'theme_location' => 'mobile-nav',                   // where it's located in the theme
@@ -71,7 +71,7 @@ function spartan_mobile_nav() {
       'link_before' => '',                                // before each link
       'link_after' => '',                                 // after each link
       'depth' => 0,                                       // limit the depth of the nav
-      'fallback_cb' => 'spartan_top_nav_fallback'      // fallback function
+      'fallback_cb' => 'spartan_nav_fallback'      // fallback function
   ));
 } /* end spartan mobile nav */
 
@@ -80,7 +80,7 @@ function spartan_day_nav() {
   // display the wp3 menu if available
     wp_nav_menu(array(
       'container' => '',                                  // remove nav container
-      'container_class' => 'menu clearfix',               // class of container (should you choose to use it)
+      'container_class' => 'menu',               // class of container (should you choose to use it)
       'menu' => __( 'Day Nav', 'spartantheme' ),  // nav name
       'menu_class' => 'nav mob',                          // adding custom nav class
       'theme_location' => 'day-nav',                   // where it's located in the theme
@@ -89,7 +89,7 @@ function spartan_day_nav() {
       'link_before' => '',                                // before each link
       'link_after' => '',                                 // after each link
       'depth' => 0,                                       // limit the depth of the nav
-      'fallback_cb' => 'spartan_top_nav_fallback'      // fallback function
+      'fallback_cb' => 'spartan_nav_fallback'      // fallback function
   ));
 } /* end spartan mobile nav */
 
@@ -98,7 +98,7 @@ function spartan_night_nav() {
   // display the wp3 menu if available
     wp_nav_menu(array(
       'container' => '',                                  // remove nav container
-      'container_class' => 'menu clearfix',               // class of container (should you choose to use it)
+      'container_class' => 'menu',               // class of container (should you choose to use it)
       'menu' => __( 'Night Nav', 'spartantheme' ),  // nav name
       'menu_class' => 'nav mob',                          // adding custom nav class
       'theme_location' => 'night-nav',                   // where it's located in the theme
@@ -107,15 +107,15 @@ function spartan_night_nav() {
       'link_before' => '',                                // before each link
       'link_after' => '',                                 // after each link
       'depth' => 0,                                       // limit the depth of the nav
-      'fallback_cb' => 'spartan_top_nav_fallback'      // fallback function
+      'fallback_cb' => 'spartan_nav_fallback'      // fallback function
   ));
 } /* end spartan mobile nav */
 
 // this is the fallback for header menu
-function spartan_top_nav_fallback() {
+function spartan_nav_fallback() {
   wp_page_menu( array(
     'show_home' => true,
-    'menu_class' => 'nav top-nav clearfix',      // adding custom nav class
+    'menu_class' => 'nav top-nav fallback',      // adding custom nav class
     'include'     => '',
     'exclude'     => '',
     'echo'        => true,
@@ -124,7 +124,3 @@ function spartan_top_nav_fallback() {
   ) );
 }
 
-// this is the fallback for footer menu
-function spartan_footer_nav_fallback() {
-  /* you can put a default here if you like */
-}

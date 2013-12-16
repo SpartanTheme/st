@@ -1,20 +1,16 @@
 <?php get_header(); ?>
 
-	<div class="row">
+	<div class="large-12 medium-12 columns" role="main" itemprop="mainContentOfPage">
 
-		<div class="large-12 medium-12 columns" role="main" itemprop="mainContentOfPage">
+		<?php include 'tpl/content.php'; ?>
+		<?php
 
-			<?php include 'tpl/content.php'; ?>
-			<?php
+		if ( is_page('home') ) {
 
-			if ( is_page('home') ) {
+			include 'slider.php';
 
-				include 'slider.php';
-
-			}
-			?>
-
-		</div>
+		}
+		?>
 
 	</div>
 

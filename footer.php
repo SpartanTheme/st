@@ -1,10 +1,6 @@
-			<footer class="row footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			</div<?php // .main row ?>>
 
-				<div class="large-12 small-12 columns">
-					<h2 class="entry-title" itemprop="headline">Contact me</h2>
-					<?php echo do_shortcode( '[contact-form-7 id="12" title="Contact"]' ); ?>
-				</div>
-
+			<footer class="footer row" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
 				<div class="large-6 medium-6 small-12 columns">
 					<p class="source-org copyright">&copy; 2004 - <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
@@ -29,14 +25,14 @@
 				</div>
 
 			</footer>
-			<a class="exit-off-canvas"></a>
-			</div>
-		</div>
+
+			<a class="exit-off-canvas closes"></a>
+
+			</div<?php // .inner-wrap ?>>
+		</div<?php // .off-canvas-wrap ?>>
 
 		<?php wp_footer(); // wordpress css and js ?>
-		<script>
-      $(document).foundation();
-    </script>
+
   </body>
 
 </html>
