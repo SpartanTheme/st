@@ -8,7 +8,7 @@ URL: http://renzojohnson.com/spartan
 require_once locate_template('/lib/wp-less/wp-less.php' );
 
 if ( ! is_admin() )
-    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/assets/less/app.less' );
+    wp_enqueue_style( 'spartan', get_stylesheet_directory_uri() . '/assets/less/app.less', false, null, false );
 
 
     add_filter( 'wp_less_cache_path', 'custom_less_cache_path' );

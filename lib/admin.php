@@ -34,7 +34,7 @@ add_action('admin_menu', 'disable_default_dashboard_widgets');
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function spartan_login_css() {
-	wp_enqueue_style( 'spartan_login_css', get_template_directory_uri() . '/library/css/login.css', false );
+	wp_enqueue_style( 'spartan_login_css', get_template_directory_uri() . '/assets/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
@@ -50,10 +50,29 @@ add_filter('login_headertitle', 'spartan_login_title');
 
 
 /************* CUSTOMIZE ADMIN *******************/
+// custom admin footer
 function spartan_custom_admin_footer() {
-	_e('Built using <a href="http://spartantheme.com/" target="_blank">Spartan WP</a>.', 'spartantheme');
+	_e('Built using <a href="http://spartantheme.com/" target="_blank">Spartan WP</a>. Customized by <a href="http://renzojohnson.com/" target="_blank">Renzo Johnson</a>', 'spartantheme');
 }
-// adding it to the admin area
 add_filter('admin_footer_text', 'spartan_custom_admin_footer');
+
+// auto-insert content to post editor
+function spartan_content($content) {
+	$content = "<h5>Thank you for developing with Spartan Theme.</h5><p>Read more about <a href=\"http://spartantheme.com\" target=\"_blank\">Spartan Theme</a> <a href=\"http://spartantheme.com\" target=\"_blank\">here</a></p>";
+	return $content;
+}
+add_filter('default_content', 'spartan_content');
+
+//Hide  display of unnecessary information on failed login attempts
+function wrong_login() {
+return 'Wrong username or password.';
+}
+add_filter('login_errors', 'wrong_login');
+
+# Enables updates plugins
+add_filter( 'auto_update_plugin', '__return_true' );
+
+# Enables updates themes
+add_filter( 'auto_update_theme', '__return_true' );
 
 ?>
