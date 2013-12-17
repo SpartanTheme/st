@@ -4902,11 +4902,6 @@ header.row {
   width:0;
   height:0;
 }
-.vcard {
-  border:none;
-  font-size:0;
-}
-.vcard a.fn { font-size:0; }
 .entry-title, .entry-title a {
   margin:.67em 0;
   color:#fff;

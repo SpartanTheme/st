@@ -1,4 +1,4 @@
-a:2:{s:4:"vars";a:2:{s:8:"themeurl";s:46:"~"http://sprytheme.com/wp-content/themes/st-x"";s:7:"lessurl";s:58:"~"http://sprytheme.com/wp-content/themes/st-x/assets/less"";}s:4:"less";a:4:{s:4:"root";s:66:"/home/spry/public_html/wp-content/themes/st-x/assets/less/app.less";s:8:"compiled";s:143523:"/*!
+a:2:{s:4:"vars";a:2:{s:8:"themeurl";s:46:"~"http://sprytheme.com/wp-content/themes/st-x"";s:7:"lessurl";s:58:"~"http://sprytheme.com/wp-content/themes/st-x/assets/less"";}s:4:"less";a:4:{s:4:"root";s:66:"/home/spry/public_html/wp-content/themes/st-x/assets/less/app.less";s:8:"compiled";s:143453:"/*!
 * Spartan Theme
 * Theme: http://spartantheme.com
 * Theme Author: Renzo Johnson
@@ -4902,11 +4902,6 @@ header.row {
   width:0;
   height:0;
 }
-.vcard {
-  border:none;
-  font-size:0;
-}
-.vcard a.fn { font-size:0; }
 .entry-title, .entry-title a {
   margin:.67em 0;
   color:#fff;
@@ -5268,4 +5263,4 @@ span .wpcf7-list-item { margin-left:0.5em; }
     background-size:24px 24px;
   }
 }
-";s:5:"files";a:7:{s:66:"/home/spry/public_html/wp-content/themes/st-x/assets/less/app.less";i:1387177222;s:72:"/home/spry/public_html/wp-content/themes/st-x/assets/less/normalize.less";i:1385577647;s:67:"/home/spry/public_html/wp-content/themes/st-x/assets/less/base.less";i:1386478297;s:68:"/home/spry/public_html/wp-content/themes/st-x/assets/less/fonts.less";i:1386467634;s:66:"/home/spry/public_html/wp-content/themes/st-x/assets/less/nav.less";i:1386469307;s:69:"/home/spry/public_html/wp-content/themes/st-x/assets/less/custom.less";i:1386595277;s:68:"/home/spry/public_html/wp-content/themes/st-x/assets/less/fancy.less";i:1386442602;}s:7:"updated";i:1387177242;}}
+";s:5:"files";a:7:{s:66:"/home/spry/public_html/wp-content/themes/st-x/assets/less/app.less";i:1387177222;s:72:"/home/spry/public_html/wp-content/themes/st-x/assets/less/normalize.less";i:1385577647;s:67:"/home/spry/public_html/wp-content/themes/st-x/assets/less/base.less";i:1386478297;s:68:"/home/spry/public_html/wp-content/themes/st-x/assets/less/fonts.less";i:1386467634;s:66:"/home/spry/public_html/wp-content/themes/st-x/assets/less/nav.less";i:1386469307;s:69:"/home/spry/public_html/wp-content/themes/st-x/assets/less/custom.less";i:1387185373;s:68:"/home/spry/public_html/wp-content/themes/st-x/assets/less/fancy.less";i:1386442602;}s:7:"updated";i:1387185378;}}
