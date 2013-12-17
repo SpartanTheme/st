@@ -20,7 +20,7 @@
 
 				<nav class="left-off-canvas-menu mobile-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-					<h3 class="site-title"><a href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?> - <?php bloginfo('description'); ?>">Renzo Johnson</a></h3>
+					<h3 class="site-title"><a href="<?php echo home_url(); ?>" itemprop="url" title="<?php echo bloginfo('name'); ?> - <?php bloginfo('description'); ?>"><?php echo bloginfo('name'); ?></a></h3>
 
 					<?php spartan_mobile_nav(); // mobile navigation ?>
 
